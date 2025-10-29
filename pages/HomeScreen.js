@@ -17,7 +17,6 @@ const HomeScreen = ({ navigation }) => {
 
   const handleNumberChange = (text, index) => {
     const newNumbers = [...numbers];
-    // Hanya menerima angka
     if (text === '' || /^\d+$/.test(text)) {
       newNumbers[index] = text;
       setNumbers(newNumbers);
@@ -25,7 +24,6 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const findSmallestNumber = () => {
-    // Filter hanya angka yang tidak kosong
     const validNumbers = numbers.filter(num => num !== '').map(Number);
     
     if (validNumbers.length === 0) {
@@ -61,7 +59,6 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.subtitle}>Masukkan 4 angka dan temukan nilai terkecil</Text>
           </View>
 
-          {/* Input Fields */}
           <View style={styles.inputSection}>
             <Text style={styles.sectionTitle}>Masukkan Angka</Text>
             
@@ -83,7 +80,6 @@ const HomeScreen = ({ navigation }) => {
             </View>
           </View>
 
-          {/* Action Buttons */}
           <View style={styles.buttonContainer}>
             <TouchableOpacity 
               style={[styles.button, styles.findButton]}
@@ -100,7 +96,6 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
 
-          {/* Result Section */}
           {result !== null && (
             <View style={styles.resultSection}>
               <Text style={styles.resultTitle}>Hasil Pencarian</Text>
@@ -109,7 +104,6 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.resultValue}>{result}</Text>
               </View>
               
-              {/* Show all numbers for comparison */}
               <View style={styles.comparisonBox}>
                 <Text style={styles.comparisonTitle}>Angka yang dibandingkan:</Text>
                 <View style={styles.numbersList}>
